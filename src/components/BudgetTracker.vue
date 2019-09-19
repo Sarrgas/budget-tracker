@@ -22,9 +22,9 @@ import InputDialog from './InputDialog'
 export default {
     name: 'BudgetTracker',
     components: { InputDialog },
-    data() {
-        return {
-            budget: 0
+    computed: {
+        budget() {
+            return this.$store.getters.getBudget;
         }
     }
 }

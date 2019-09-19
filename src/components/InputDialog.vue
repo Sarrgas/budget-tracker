@@ -38,7 +38,7 @@ export default {
     data(){
         return {
             dialog: false,
-            amount: 0,
+            amount: '',
         }
     },
     computed: {
@@ -49,18 +49,20 @@ export default {
     methods: {
         save(){
             this.dialog = false;
+            let amount = parseInt(this.amount);
             if (this.mode === "Add") {
-                this.add();
+                this.add(amount);
             }
             else if (this.mode === "Subtract") {
-                this.subtract();
+                this.subtract(amount);
             }
+            this.amount = 0;
         },
-        add(){
-            console.log(`Adding amount: ${this.amount}`);
+        add(amount){
+            this.$store.commit('add', amount);
         },
-        subtract(){
-            console.log(`Subtracting amount: ${this.amount}`);
+        subtract(amount){
+            this.$store.commit('subtract', amount);
         }
     }
 }
