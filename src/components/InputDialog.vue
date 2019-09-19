@@ -2,6 +2,7 @@
   <v-dialog
         v-model="dialog"
         width="500"
+        eager
       >
         <template v-slot:activator="{ on }">
           <v-btn x-large class="my-3" minWidth="200" v-on="on">
@@ -35,6 +36,9 @@
 <script>
 export default {
     props: ["mode"],
+    updated() {
+        this.$refs.amount.$el.focus();
+    },
     data(){
         return {
             dialog: false,
@@ -56,6 +60,9 @@ export default {
             else if (this.mode === "Subtract") {
                 this.subtract(amount);
             }
+            else if (this.mode === "Set") {
+                this.set(amount);
+            }
             this.amount = 0;
         },
         add(amount){
@@ -63,6 +70,9 @@ export default {
         },
         subtract(amount){
             this.$store.dispatch('subtract', amount);
+        },
+        set(amount){
+            this.$store.dispatch('set', amount);
         }
     }
 }

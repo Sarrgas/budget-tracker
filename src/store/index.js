@@ -37,6 +37,10 @@ export default new Vuex.Store({
         subtract({commit, state}, amount){
             commit('subtract', amount);
             setBudget(state.budget);
+        },
+        set({commit, state}, amount){
+            commit('set', amount);
+            setBudget(state.budget);
         }
     }
 });

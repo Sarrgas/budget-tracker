@@ -12,6 +12,9 @@
             <div class="d-flex justify-center">
                 <InputDialog mode="Subtract" />
             </div>
+            <div class="d-flex justify-center">
+                <InputDialog mode="Set" />
+            </div>
         </div>
     </div>
 </template>
