@@ -7,18 +7,21 @@
         </div>
         <div class="my-10">
             <div class="d-flex justify-center">
-                <v-btn x-large class="my-3" minWidth="200" @click="budget++">ADD</v-btn>
+                <InputDialog mode="Add" />
             </div>
             <div class="d-flex justify-center">
-                <v-btn x-large class="my-3" minWidth="200" @click="budget--">SUBTRACT</v-btn>
+                <InputDialog mode="Subtract" />
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import InputDialog from './InputDialog'
+
 export default {
     name: 'BudgetTracker',
+    components: { InputDialog },
     data() {
         return {
             budget: 0
