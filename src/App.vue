@@ -11,6 +11,9 @@ import BudgetTracker from './components/BudgetTracker';
 
 export default {
   name: 'App',
+  mounted() {
+    this.$store.dispatch('init');
+  },
   components: {
     BudgetTracker,
   }

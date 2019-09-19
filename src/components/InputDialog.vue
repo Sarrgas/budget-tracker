@@ -59,10 +59,10 @@ export default {
             this.amount = 0;
         },
         add(amount){
-            this.$store.commit('add', amount);
+            this.$store.dispatch('add', amount);
         },
         subtract(amount){
-            this.$store.commit('subtract', amount);
+            this.$store.dispatch('subtract', amount);
         }
     }
 }
